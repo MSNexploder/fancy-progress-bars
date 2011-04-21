@@ -1,0 +1,19 @@
+@import "compass/css3/border-radius";
+
+@import "fancy-progress-bars/defaults";
+@import "fancy-progress-bars/label";
+@import "fancy-progress-bars/background";
+
+@mixin progress-bar-base($height, $base-color, $background-color) {
+  @include progress-bar-label($height);
+  @include progress-bar-background($height, $background-color);
+  height: $height;
+
+  & > div {
+    @include border-radius(ceil($height / 2));
+    background-color: $base-color;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+}

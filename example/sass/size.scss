@@ -1,0 +1,14 @@
+@import "page-styles";
+@import "fancy-progress-bars";
+
+.smallish {
+  @include progress-bar(10px);
+}
+
+.big {
+  @include progress-bar(30px);
+}
+
+.huge {
+  @include progress-bar(60px);
+}

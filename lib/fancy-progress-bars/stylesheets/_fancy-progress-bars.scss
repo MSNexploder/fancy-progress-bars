@@ -1,0 +1,22 @@
+// This is your framework's main stylesheet. Use it to import all default modules.
+@import "fancy-progress-bars/defaults";
+@import "fancy-progress-bars/common";
+@import "fancy-progress-bars/label";
+@import "fancy-progress-bars/stripes";
+@import "fancy-progress-bars/animated";
+@import "fancy-progress-bars/background";
+@import "fancy-progress-bars/glossy-gradient";
+@import "fancy-progress-bars/matte-gradient";
+@import "fancy-progress-bars/plain";
+
+@mixin progress-bar($height: $default-progress-bar-height, $base-color: $default-progress-bar-base-color, $background-color: $default-progress-bar-background-color) {
+  @include progress-bar-glossy($height, $base-color, $background-color);
+}
+
+@mixin progress-bar-striped($height: $default-progress-bar-height, $base-color: $default-progress-bar-base-color, $background-color: $default-progress-bar-background-color, $strip-color: $default-progress-bar-stripes-color) {
+  @include progress-bar-glossy-striped($height, $base-color, $background-color, $strip-color);
+}
+
+@mixin progress-bar-animated($height: $default-progress-bar-height, $base-color: $default-progress-bar-base-color, $background-color: $default-progress-bar-background-color, $strip-color: $default-progress-bar-stripes-color) {
+  @include progress-bar-glossy-animated($height, $base-color, $background-color, $strip-color);
+}

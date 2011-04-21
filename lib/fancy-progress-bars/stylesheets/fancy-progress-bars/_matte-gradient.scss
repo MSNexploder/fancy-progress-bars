@@ -1,0 +1,36 @@
+@import "compass/css3/images";
+@import "compass/css3/box-shadow";
+
+@import "fancy-progress-bars/defaults";
+@import "fancy-progress-bars/common";
+@import "fancy-progress-bars/stripes";
+@import "fancy-progress-bars/animated";
+
+@mixin progress-bar-matte($height: $default-progress-bar-height, $base-color: $default-progress-bar-base-color, $background-color: $default-progress-bar-background-color) {
+  @include progress-bar-base($height, $base-color, $background-color);
+  & > div {
+    @include matte-gradient($base-color);
+    & > span {
+      @include box-shadow(
+        rgba(255, 255, 255, (lightness($base-color) / 100)) 0 0 ($height / 20) 0 inset
+      );
+    }
+  }
+}
+
+@mixin progress-bar-matte-striped($height: $default-progress-bar-height, $base-color: $default-progress-bar-base-color, $background-color: $default-progress-bar-background-color, $strip-color: $default-progress-bar-stripes-color) {
+  @include progress-bar-matte($height, $base-color, $background-color);
+  @include progress-bar-stripes($strip-color);
+}
+
+@mixin progress-bar-matte-animated($height: $default-progress-bar-height, $base-color: $default-progress-bar-base-color, $background-color: $default-progress-bar-background-color, $strip-color: $default-progress-bar-stripes-color) {
+  @include progress-bar-matte-striped($height, $base-color, $background-color, $strip-color);
+  @include progress-bar-animation;
+}
+
+@mixin matte-gradient($base-color) {
+  @include background(linear-gradient(
+    lighten($base-color, 15%),
+    darken($base-color, 6%)
+  ));
+}

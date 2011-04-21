@@ -1,0 +1,16 @@
+@import "page-styles";
+@import "fancy-progress-bars";
+
+.bluish {
+  @include progress-bar-plain-animated($default-progress-bar-height, #87cefa);
+}
+
+.background {
+  @include progress-bar-plain-animated;
+  @include progress-bar-background($default-progress-bar-height, #87cefa);
+}
+
+.stripes {
+  @include progress-bar-plain-animated;
+  @include progress-bar-stripes(#87cefa);
+}

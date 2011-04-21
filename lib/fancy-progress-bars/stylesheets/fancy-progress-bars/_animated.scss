@@ -1,0 +1,18 @@
+@import "fancy-progress-bars/defaults";
+
+@-webkit-keyframes animate-stripes {
+    0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: -50px -50px;
+    }
+}
+
+// Only webkit supported right now
+// TODO find similar stuff for other browsers
+@mixin progress-bar-animation {
+  & > div > span {
+    -webkit-animation: animate-stripes 2s linear infinite;
+  }
+}

@@ -1,0 +1,14 @@
+@import "page-styles";
+@import "fancy-progress-bars";
+
+.plain {
+  @include progress-bar-plain-striped;
+}
+
+.glossy {
+  @include progress-bar-glossy-striped;
+}
+
+.matte {
+  @include progress-bar-matte-striped;
+}

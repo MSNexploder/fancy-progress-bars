@@ -1,0 +1,36 @@
+@import "compass/css3/images";
+
+@import "fancy-progress-bars/defaults";
+
+@mixin progress-bar-stripes($strip-color: $default-progress-bar-stripes-color) {
+  & > div > span {
+    @include progress-bar-stripes-webkit-fix($strip-color);
+    @include background(linear-gradient(
+      -45deg,
+      $strip-color 0%,
+      $strip-color 25%,
+      rgba(0, 0, 0, 0.0) 25%, // TODO switch to transparent once supported
+      rgba(0, 0, 0, 0.0) 50%, // TODO switch to transparent once supported
+      $strip-color 50%,
+      $strip-color 75%,
+      rgba(0, 0, 0, 0.0) 75%, // TODO switch to transparent once supported
+      rgba(0, 0, 0, 0.0) 100% // TODO switch to transparent once supported
+    ));
+    background-size: 50px 50px;
+  }
+}
+
+// Fix for older webkit not supporting the offical gradient syntax
+@mixin progress-bar-stripes-webkit-fix ($strip-color) {
+  background-image:
+     -webkit-gradient(linear, 0 0, 100% 100%,
+        color-stop(0.0, $strip-color),
+        color-stop(0.25, $strip-color),
+        color-stop(0.25, transparent),
+        color-stop(0.5, transparent),
+        color-stop(0.5, $strip-color),
+        color-stop(0.75, $strip-color),
+        color-stop(0.75, transparent),
+        color-stop(1.0, transparent)
+     );
+}

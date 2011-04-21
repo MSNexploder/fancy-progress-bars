@@ -1,0 +1,25 @@
+@import "compass/css3/border-radius";
+
+@import "fancy-progress-bars/defaults";
+
+@mixin progress-bar-label($height: $default-progress-bar-height, $label-position: $default-progress-bar-label-position, $label-color: $default-progress-bar-label-text-color) {
+  & > div > span {
+    @if $height < 25px {
+      font-size: $height * 0.7;
+    } @else {
+      font-size: (25px * 0.7);
+    }
+    $border-radius: ceil($height / 2);
+
+    @include border-radius($border-radius);
+    overflow: hidden;
+    text-align: $label-position;
+    color: $label-color;
+    line-height: $height;
+    text-shadow: rgba(255, 255, 255, 0.45) 0 1px 0px;
+    padding: 0 ceil($height / 2);
+    white-space: nowrap;
+    position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+  }
+}

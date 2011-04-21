@@ -1,0 +1,13 @@
+@import "fancy-progress-bars/defaults";
+
+@import "compass/css3/border-radius";
+
+@mixin progress-bar-background($height: $default-progress-bar-height, $background-color: $default-progress-bar-background-color) {
+  $border-radius: ceil($height / 2);
+  @include border-radius($border-radius);
+  @include box-shadow(
+    rgba(0, 0, 0, 0.5) 0 ($height / 20) ($height / 10) inset,
+    rgba(255, 255, 255, 1.0) 0 ($height / 20) 0 0
+  );
+  background: $background-color;
+}
