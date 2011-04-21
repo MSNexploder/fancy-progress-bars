@@ -16,6 +16,10 @@ To add fancy-progress-bars to an existing compass project:
     # Then run the following command:
     compass install -r fancy-progress-bars -f fancy-progress-bars
 
+## Demo
+
+![screenshot](https://github.com/MSNexploder/fancy-progress-bars/raw/master/demo.png)
+
 ## Basic usage
 
 In order to work correctly fancy-progress-bars assume the following html (the class name is - of course - arbitrary):
