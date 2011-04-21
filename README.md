@@ -1,6 +1,7 @@
 ## Install
 
 Install the plugin: (should automatically install latest dependencies for Compass, and Haml)
+
     gem install fancy-progress-bars
 
 To create a new project based on fancy-progress-bars:
